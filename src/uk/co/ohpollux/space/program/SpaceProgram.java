@@ -51,13 +51,9 @@ public class SpaceProgram {
 
 	Option defaultReplace = new Option("d", "default", false,
 		"replace all types of spaces with default ones if true, with non-default if false");
-	defaultReplace.setRequired(false);
 	Option help = new Option("h", "help", false, "displays help information");
-	help.setRequired(false);
 	Option inFilePath = new Option("if", "inFile", true, "full path to the file that will be processed");
-	inFilePath.setRequired(true);
 	Option outFilePath = new Option("of", "outFile", true, "full path where the processed file will be stored");
-	outFilePath.setRequired(true);
 
 	options.addOption(defaultReplace);
 	options.addOption(inFilePath);
