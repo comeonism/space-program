@@ -23,10 +23,10 @@ public class SpaceProgram {
 
 	    if (cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
 		HelpFormatter formatter = new HelpFormatter();
-		String header = "Mess around with spaces\n\n";
-		String footer = "\nIf you're having issues - email me at aleks@ohpollux.co.uk or fork the git branch and make the code better";
+		String header = "Options: \n\n";
+		String footer = "\nIf you're having issues - email me at aleks@ohpollux.co.uk or fork the git branch and have fun";
 
-		formatter.printHelp("Space Program", header, options, footer, true);
+		formatter.printHelp("java -jar space-program.jar", header, options, footer, true);
 	    } else {
 		String inFile = cmd.getOptionValue("if");
 		String outFile = cmd.getOptionValue("of");
@@ -51,11 +51,13 @@ public class SpaceProgram {
 
 	Option defaultReplace = new Option("d", "default", false,
 		"replace all types of spaces with default ones if true, with non-default if false");
+	defaultReplace.setRequired(false);
 	Option help = new Option("h", "help", false, "displays help information");
+	help.setRequired(false);
 	Option inFilePath = new Option("if", "inFile", true, "full path to the file that will be processed");
-	inFilePath.isRequired();
+	inFilePath.setRequired(true);
 	Option outFilePath = new Option("of", "outFile", true, "full path where the processed file will be stored");
-	outFilePath.isRequired();
+	outFilePath.setRequired(true);
 
 	options.addOption(defaultReplace);
 	options.addOption(inFilePath);
