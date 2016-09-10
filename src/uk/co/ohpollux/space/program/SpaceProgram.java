@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
@@ -20,9 +21,10 @@ public class SpaceProgram {
 	try {
 	    CommandLineParser parser = new DefaultParser();
 	    CommandLine cmd = parser.parse(options, args);
+	    HelpFormatter formatter = new HelpFormatter();
 
-	    if (!cmd.hasOption("if") || !cmd.hasOption("of")) {
-		System.out.println("Paths not specified, exiting");
+	    if (cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
+		formatter.printHelp("", options);
 	    } else {
 		String inFile = cmd.getOptionValue("if");
 		String outFile = cmd.getOptionValue("of");
@@ -45,16 +47,19 @@ public class SpaceProgram {
     private static Options constructOptions() {
 	Options options = new Options();
 
-	Option defaultReplace = new Option("d", false,
+	Option defaultReplace = new Option("d", "default", false,
 		"replace all types of spaces with default ones if true, with non-default if false");
-	Option inFilePath = new Option("if", true, "full path to the file that will be processed");
+	Option help = new Option("h", "help", false, "displays help information");
+	Option inFilePath = new Option("if", "inFile", true, "full path to the file that will be processed");
 	inFilePath.isRequired();
-	Option outFilePath = new Option("of", true, "full path where the processed file will be stored");
+	Option outFilePath = new Option("of", "outFile", true, "full path where the processed file will be stored");
 	outFilePath.isRequired();
 
 	options.addOption(defaultReplace);
 	options.addOption(inFilePath);
 	options.addOption(outFilePath);
+	options.addOption(help);
+
 	return options;
     }
 
