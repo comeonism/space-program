@@ -1,0 +1,1 @@
+Note that the 8queens.py code was taken from: https://wiki.python.org/moin/SimplePrograms

@@ -1,6 +1,7 @@
 package uk.co.ohpollux.space.program;
 
 public enum Whitespace {
+    // @formatter:off
 	SPACE(0x0020),
 	NO_BREAK_SPACE(0x00A0),
 	EN_QUAD(0x2000),
@@ -17,17 +18,16 @@ public enum Whitespace {
 	NARROW_NO_BREAK_SPACE(0x202F),
 	MEDIUM_MATHEMATICAL_SPACE(0x205F),
 	IDEOGRAPHIC_SPACE(0x3000),
-	MONGOLIAN_VOWEL_SEPARATOR(0x180E),
-	ZERO_WIDTH_SPACE(0x200B),
-	ZERO_WIDTH_NO_BREAK_SPACE(0xFEFF);
-	
-	private char spaceType;
-	
-	Whitespace(int value) {
-		this.spaceType = (char)value;
-	}
-	
-	char getWhitespaceChar() {
-		return spaceType;
-	}
+	MONGOLIAN_VOWEL_SEPARATOR(0x180E);
+    // @formatter:on
+
+    private char spaceType;
+
+    Whitespace(int value) {
+	this.spaceType = (char) value;
+    }
+
+    char getWhitespaceChar() {
+	return spaceType;
+    }
 }

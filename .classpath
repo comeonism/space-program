@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="D:/Development/JUnit/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="D:/Development/JUnit/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="D:/Development/CommandLine/commons-cli-1.3.1/commons-cli-1.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/Development/IO/commons-io-2.5/commons-io-2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
