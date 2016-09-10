@@ -18,11 +18,6 @@ public class SpaceProgram {
 	HelpFormatter formatter = new HelpFormatter();
 	Options options = constructOptions();
 
-	if (args.length == 0) {
-	    formatter.printHelp("", options);
-	    System.exit(-1);
-	}
-
 	try {
 	    CommandLineParser parser = new DefaultParser();
 	    CommandLine cmd = parser.parse(options, args);
