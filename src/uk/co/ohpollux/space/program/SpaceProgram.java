@@ -21,7 +21,7 @@ public class SpaceProgram {
 	    CommandLineParser parser = new DefaultParser();
 	    CommandLine cmd = parser.parse(options, args);
 
-	    if (cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
+	    if (args.length == 0 || cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
 		HelpFormatter formatter = new HelpFormatter();
 		String header = "Options: \n\n";
 		String footer = "\nIf you're having issues - email me at aleks@ohpollux.co.uk or fork the git branch and have fun";
@@ -40,7 +40,7 @@ public class SpaceProgram {
 		System.out.println("Space Program: Done");
 	    }
 	} catch (ParseException e) {
-	    System.out.println("Space Program: Having trouble parsing arguments in the command line");
+	    System.out.println("Space Program: Having trouble parsing arguments");
 	} catch (IOException e) {
 	    System.out.println("Space Program: Having trouble parsing the original file into string");
 	}
