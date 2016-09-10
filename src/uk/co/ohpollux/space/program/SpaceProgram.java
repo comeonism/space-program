@@ -15,15 +15,19 @@ public class SpaceProgram {
 
     public static void main(String[] args) {
 	System.out.println("Space Program: Starting");
-
+	HelpFormatter formatter = new HelpFormatter();
 	Options options = constructOptions();
+
+	if (args.length == 0) {
+	    formatter.printHelp("", options);
+	    System.exit(-1);
+	}
 
 	try {
 	    CommandLineParser parser = new DefaultParser();
 	    CommandLine cmd = parser.parse(options, args);
-	    HelpFormatter formatter = new HelpFormatter();
 
-	    if (cmd.getOptions().length == 0 || cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
+	    if (cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
 		formatter.printHelp("", options);
 	    } else {
 		String inFile = cmd.getOptionValue("if");
