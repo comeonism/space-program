@@ -23,7 +23,7 @@ public class SpaceProgram {
 	    CommandLine cmd = parser.parse(options, args);
 	    HelpFormatter formatter = new HelpFormatter();
 
-	    if (cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
+	    if (cmd.getOptions().length == 0 || cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
 		formatter.printHelp("", options);
 	    } else {
 		String inFile = cmd.getOptionValue("if");
