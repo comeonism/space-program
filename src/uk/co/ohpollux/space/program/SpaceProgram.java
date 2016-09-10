@@ -15,7 +15,6 @@ public class SpaceProgram {
 
     public static void main(String[] args) {
 	System.out.println("Space Program: Starting");
-	HelpFormatter formatter = new HelpFormatter();
 	Options options = constructOptions();
 
 	try {
@@ -23,7 +22,11 @@ public class SpaceProgram {
 	    CommandLine cmd = parser.parse(options, args);
 
 	    if (cmd.hasOption("h") || !cmd.hasOption("if") || !cmd.hasOption("of")) {
-		formatter.printHelp("", options);
+		HelpFormatter formatter = new HelpFormatter();
+		String header = "Mess around with spaces\n\n";
+		String footer = "\nIf you're having issues - email me at aleks@ohpollux.co.uk or fork the git branch and make the code better";
+
+		formatter.printHelp("Space Program", header, options, footer, true);
 	    } else {
 		String inFile = cmd.getOptionValue("if");
 		String outFile = cmd.getOptionValue("of");
