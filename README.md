@@ -1,0 +1,5 @@
+# Space Program
+
+Have you ever been in an argument about which programming language is better? And you occasionally get that dude who thinks that scripting languages are the best and just can't shut up about how amazing Python is? No? Well, neither have I, but I'm assuming these things happen. And because Python is [fussy about whitespace](http://programmers.stackexchange.com/questions/66755/do-python-programmers-find-the-whitespace-issue-inconvenient) let's be a little bit evil and make a program that would go through a given file and replace all normal whitespace characters with fancy whitespaces, of which [there are sixteen](https://www.cs.tut.fi/~jkorpela/chars/spaces.html). Yeah, I think that's how you become a pretty mediocre villain. 
+
+Anyway, there's [a post I wrote about this project](http://ohpollux.co.uk/blog/2016/09/14/Lets-Mess-Up-Spaces) that talks a bit more about it. 
